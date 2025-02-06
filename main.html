@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Model Viewer</title>
+    <link rel="stylesheet" href="main.css">
+
+</head>
+<body>
+    <model-viewer 
+        id="model" 
+        src="/poppy_playtime_chapter_4_-_doctor.glb"
+        disable-zoom
+        disable-tap
+        disable-pan
+        interaction-prompt="none"
+        shadow-intensity="1"
+        exposure="1"
+        camera-controls="false"
+        environment-image="neutral"
+        min-camera-orbit="auto auto 50m"
+        max-camera-orbit="auto auto 50m"
+        field-of-view="25deg"
+        camera-target="0m 22m 10m">
+    </model-viewer>
+
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
