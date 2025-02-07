@@ -8,6 +8,26 @@
 
 </head>
 <body>
+    <div class="hidden-element" id="secret"></div>
+    
+    <div class="modal" id="bathroomModal">
+        <span class="close-modal">&times;</span>
+        <div class="sketchfab-embed-wrapper">
+            <iframe title="Creepy Pixel-Art Bathroom" 
+                frameborder="0" 
+                allowfullscreen 
+                mozallowfullscreen="true" 
+                webkitallowfullscreen="true" 
+                allow="autoplay; fullscreen" 
+                src="https://sketchfab.com/models/c85ebe8fec8c46daa7d68628edcbc2a8/embed?autostart=1&ui_controls=0&ui_infos=0&ui_inspector=0&ui_stop=0&ui_watermark=0&ui_watermark_link=0">
+            </iframe>
+        </div>
+    </div>
+    
+    <audio autoplay loop id="bg-audio">
+        <source src="chilling-horror-background-294218.mp3" type="audio/mpeg">
+    </audio>
+        
     <model-viewer 
         id="model" 
         src="/poppy_playtime_chapter_4_-_doctor.glb"
@@ -22,7 +42,8 @@
         min-camera-orbit="auto auto 50m"
         max-camera-orbit="auto auto 50m"
         field-of-view="25deg"
-        camera-target="0m 22m 10m">
+        camera-target="0m 22m 10m"
+        loading="eager">
     </model-viewer>
 
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>

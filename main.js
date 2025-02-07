@@ -22,4 +22,45 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     animate();
+
+    // Add treasure hunt functionality
+    const secret = document.getElementById('secret');
+    const modal = document.getElementById('bathroomModal');
+    const closeModal = document.querySelector('.close-modal');
+    
+    // Randomly position the secret element
+    function positionSecret() {
+        const x = Math.random() * (window.innerWidth - 20);
+        const y = Math.random() * (window.innerHeight - 20);
+        secret.style.left = x + 'px';
+        secret.style.top = y + 'px';
+    }
+    
+    // Position initially and every 10 seconds
+    positionSecret();
+    setInterval(positionSecret, 10000);
+    
+    // Handle secret click
+    secret.addEventListener('click', () => {
+        modal.classList.add('active');
+        // Play creepy sound effect
+        new Audio('creepy-reveal.mp3').play().catch(e => console.log(e));
+    });
+    
+    // Close modal
+    closeModal.addEventListener('click', () => {
+        modal.classList.remove('active');
+        positionSecret(); // Move secret to new position
+    });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    let audio = document.getElementById("bg-audio");
+    audio.play().catch(error => {
+        console.log("Autoplay blocked. Playing on user interaction.");
+        document.body.addEventListener("click", () => {
+            audio.play();
+        }, { once: true });
+    });
+});
+
